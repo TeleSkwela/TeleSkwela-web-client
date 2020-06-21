@@ -1,2 +1,2 @@
-import { checkAuthentication } from './authActions'
-export { checkAuthentication }
+import { signIn, signOut } from "./authActions";
+export { signIn, signOut };
