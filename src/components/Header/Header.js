@@ -8,6 +8,7 @@ import { AwesomeButton } from "react-awesome-button";
 import "react-awesome-button/dist/themes/theme-blue.css";
 import { connect } from "react-redux";
 import { signIn, signOut } from "../../actions";
+import logo from "../../assets/teleskwela-logo-removebg-preview.png";
 
 class Header extends React.Component {
   componentDidMount() {
@@ -57,10 +58,17 @@ class Header extends React.Component {
 
   render() {
     return (
-      <Navbar bg="primary" variant="dark" sticky="top">
+      <Navbar bg="primary" variant="dark" sticky="top" fixed="top">
         <Container>
           <Navbar.Brand as={Link} to="/">
             <AwesomeButton type="primary" size="large">
+              <img
+                alt=""
+                src={logo}
+                width="35"
+                height="35"
+                className="d-inline-block align-top"
+              />
               Teleskwela
             </AwesomeButton>
           </Navbar.Brand>
