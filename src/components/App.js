@@ -1,12 +1,12 @@
-import React from 'react';
-import history from '../history';
-import { Router, Route, Switch } from 'react-router-dom';
-import LandingPage from './LandingPage'
-import Header from './Header'
-import Footer from './Footer'
-import Pricing from './Misc/Pricing'
-import About from './Misc/About'
-import Learn from './Learn';
+import React from "react";
+import history from "../history";
+import { Router, Route, Switch } from "react-router-dom";
+import LandingPage from "./LandingPage";
+import Header from "./Header";
+import Footer from "./Footer";
+import Pricing from "./Misc/Pricing";
+import About from "./Misc/About";
+import Learn from "./Learn";
 
 const App = () => {
   return (
@@ -24,7 +24,7 @@ const App = () => {
         </div>
       </Router>
     </div>
-  )
-}
+  );
+};
 
 export default App;
