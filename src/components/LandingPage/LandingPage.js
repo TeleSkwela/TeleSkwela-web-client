@@ -142,12 +142,19 @@ class LandingPage extends React.Component {
         <Container>
           <Row>
             <Col>
-              <h2>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
-                rem sed, voluptates impedit odit quos, aliquam quia velit labore
-                saepe, itaque exercitationem error quae fugiat aut sint ducimus
-                suscipit culpa.
-              </h2>
+              <h2>TeleSkwela for Schools</h2>
+            </Col>
+          </Row>
+
+          <Row>
+            <Col>
+              <h2>Learn anywhere using gadgets you already have</h2>
+            </Col>
+          </Row>
+
+          <Row>
+            <Col>
+              <h2>Testimonials</h2>
             </Col>
           </Row>
         </Container>
