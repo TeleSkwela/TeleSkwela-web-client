@@ -8,6 +8,15 @@ import { AwesomeButton } from "react-awesome-button";
 import "react-awesome-button/dist/themes/theme-blue.css";
 import { connect } from "react-redux";
 import { signIn, signOut } from "../../actions";
+import logo from "../../assets/teleskwela-logo-removebg-preview.png";
+import Headroom from "react-headroom";
+import styled from "styled-components";
+
+const MainHeader = styled.div`
+  background-color: black;
+  position: relative;
+  top: 0;
+`;
 
 class Header extends React.Component {
   componentDidMount() {
@@ -43,40 +52,53 @@ class Header extends React.Component {
     if (!this.props.auth.isSignedIn) {
       return (
         <Button variant="success" onClick={this.onSignInClick}>
-          Log In
+          Sumali gamit ang Google
         </Button>
       );
     } else {
       return (
-        <Button variant="success" onClick={this.onSignOutClick}>
-          Sign Out
-        </Button>
+        <React.Fragment>
+          <Button variant="success" onClick={this.onSignOutClick}>
+            Umalis
+          </Button>
+        </React.Fragment>
       );
     }
   };
 
   render() {
     return (
-      <Navbar bg="primary" variant="dark" sticky="top">
-        <Container>
-          <Navbar.Brand as={Link} to="/">
-            <AwesomeButton type="primary" size="large">
-              Teleskwela
-            </AwesomeButton>
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto">
-              <Nav.Link as={Link} to="/learn">
-                <AwesomeButton type="secondary">Matuto</AwesomeButton>
-              </Nav.Link>
-            </Nav>
-            <Nav className="justify-content-end">
-              {this.renderAuthenticationButton()}
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+      <MainHeader>
+        <Headroom>
+          <Navbar bg="primary" variant="dark">
+            <Container>
+              <Navbar.Brand as={Link} to="/">
+                <AwesomeButton type="primary" size="large">
+                  <img
+                    alt=""
+                    src={logo}
+                    width="35"
+                    height="35"
+                    className="d-inline-block align-top"
+                  />
+                  Teleskwela
+                </AwesomeButton>
+              </Navbar.Brand>
+              <Navbar.Toggle aria-controls="basic-navbar-nav" />
+              <Navbar.Collapse id="basic-navbar-nav">
+                <Nav className="mr-auto">
+                  <Nav.Link as={Link} to="/learn">
+                    <AwesomeButton type="secondary">Matuto</AwesomeButton>
+                  </Nav.Link>
+                </Nav>
+                <Nav className="justify-content-end">
+                  {this.renderAuthenticationButton()}
+                </Nav>
+              </Navbar.Collapse>
+            </Container>
+          </Navbar>
+        </Headroom>
+      </MainHeader>
     );
   }
 }

@@ -7,23 +7,34 @@ import Footer from "./Footer";
 import Pricing from "./Misc/Pricing";
 import About from "./Misc/About";
 import Learn from "./Learn";
+import styled from "styled-components";
+
+const PageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+`;
+
+const ContentWrap = styled.div`
+  flex: 1;
+`;
 
 const App = () => {
   return (
-    <div>
+    <PageContainer>
       <Router history={history}>
-        <div>
-          <Header />
+        <Header />
+        <ContentWrap>
           <Switch>
             <Route path="/" exact component={LandingPage} />
             <Route path="/learn" exact component={Learn} />
             <Route path="/pricing" exact component={Pricing} />
             <Route path="/about" exact component={About} />
           </Switch>
-          <Footer />
-        </div>
+        </ContentWrap>
+        <Footer />
       </Router>
-    </div>
+    </PageContainer>
   );
 };
 
