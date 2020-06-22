@@ -6,6 +6,8 @@ import Col from "react-bootstrap/Col";
 import { AwesomeButton } from "react-awesome-button";
 import history from "../../history";
 import Card from "react-bootstrap/Card";
+import landingBg1 from "../../assets/landing-bg-1.jpg";
+import landingBg2 from "../../assets/landing-bg-2.jpg";
 import featureLogo1 from "../../assets/landing-feature-1.png";
 import featureLogo2 from "../../assets/landing-feature-2.png";
 import featureLogo3 from "../../assets/landing-feature-3.png";
@@ -28,9 +30,8 @@ const BannerButton = styled.div`
   padding: 1em 0 0;
 `;
 
-const Banner = styled.div`
-  background: url("https://images.unsplash.com/photo-1501349800519-48093d60bde0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80")
-    fixed center;
+const BannerContainer = styled.div`
+  background: url(${landingBg1}) fixed center;
   background-size: cover;
   width: 100%;
   padding: 5em 0 5em;
@@ -42,7 +43,7 @@ const Banner = styled.div`
 `;
 
 const FeatureTitle = styled.h2`
-  margin: 2em 0 1em;
+  margin: 2em 0 2em;
   font-family: "Roboto", sans-serif;
 `;
 
@@ -86,7 +87,7 @@ class LandingPage extends React.Component {
   render() {
     return (
       <div>
-        <Banner>
+        <BannerContainer>
           <BannerTitle>Ang kabataan ang pag-asa ng bayan</BannerTitle>
           <BannerSubTitle>
             Paunlarin ang talino at galing ng Pilipino sa larangan ng agham,
@@ -102,7 +103,7 @@ class LandingPage extends React.Component {
               Simulan nang Matuto
             </AwesomeButton>
           </BannerButton>
-        </Banner>
+        </BannerContainer>
         <FeatureContainer>
           <Container>
             <Row>
