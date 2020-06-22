@@ -23,8 +23,8 @@ const App = () => {
   return (
     <PageContainer>
       <Router history={history}>
+        <Header />
         <ContentWrap>
-          <Header />
           <Switch>
             <Route path="/" exact component={LandingPage} />
             <Route path="/learn" exact component={Learn} />
